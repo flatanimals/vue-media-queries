@@ -1,0 +1,38 @@
+{
+  "name": "vue-media-queries",
+  "version": "0.0.1",
+  "description": "Vue 2 media query helpers",
+  "author": "flatanimals",
+  "repository": "flatanimals/vue-media-queries",
+  "license": "MIT",
+  "main": "dist/vue-media-queries.js",
+  "module": "dist/vue-media-queries.mjs",
+  "jsnext:main": "dist/vue-media-queries.mjs",
+  "keywords": [
+    "vue",
+    "mediaqueries",
+    "media-queries",
+    "mediaquery",
+    "media-query",
+    "matchmedia"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "rollup -c",
+    "watch": "rollup -c -w",
+    "build": "NODE_ENV=production rollup -c"
+  },
+  "devDependencies": {
+    "babel-plugin-lodash": "^3.2.11",
+    "babel-preset-es2015": "^6.18.0",
+    "rollup": "^0.41.4",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^7.0.0",
+    "rollup-plugin-eslint": "^3.0.0",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-watch": "^3.2.2"
+  },
+  "dependencies": {
+    "lodash.throttle": "^4.1.1"
+  }
+}
