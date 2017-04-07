@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Example - Vue 2 Media Queries</title>
+</head>
+<body>
+<p>
+    Resize window to observe functionality
+</p>
+
+<div id="app"></div>
+
+<script type="text/x-template" id="what-is-my-size">
+    <div>
+        <div><strong>Screen Size:</strong></div>
+        <div v-if="$resize && $mq.above(992)">Desktop</div>
+        <div v-else>Tablet and Below</div>
+    </div>
+</script>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="../dist/vue-media-queries.js"></script>
+<script>
+  var mediaQueries = new vueMediaQueries.MediaQueries();
+  Vue.use(mediaQueries);
+
+  var vm = new Vue({
+    el: '#app',
+    template: '#what-is-my-size',
+    mediaQueries: mediaQueries
+  });
+</script>
+
+</body>
+</html>
