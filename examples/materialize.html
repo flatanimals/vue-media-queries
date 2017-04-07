@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bulma Example - Vue 2 Media Queries</title>
+</head>
+<body>
+<p>
+    Resize window to observe functionality
+</p>
+<div id="app"></div>
+
+
+<script type="text/x-template" id="what-is-my-size">
+    <div>
+        <div><strong>Current Screen Size(s):</strong></div>
+        <div v-show="isMediumAndUp">is Medium And Up</div>
+        <div v-show="isLargeAndUp">is Large And Up</div>
+        <div v-show="isExtraLargeAndUp">is Extra Large And Up</div>
+        <div v-show="isSmallAndDown">is Small And Down</div>
+        <div v-show="isMediumAndDown">is Medium And Down</div>
+        <div v-show="isMediumOnly">is Medium Only</div>
+    </div>
+</script>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="../dist/vue-media-queries.js"></script>
+<script>
+  var materializeBands = vueMediaQueries.CommonBands.Materialize;
+  var mediaQueries = new vueMediaQueries.MediaQueries({
+    bands: materializeBands
+  });
+  Vue.use(mediaQueries);
+
+  var vm = new Vue({
+    el: '#app',
+    template: '#what-is-my-size',
+    mediaQueries: mediaQueries,
+    mixins: [materializeBands.mixin]
+  });
+</script>
+
+</body>
+</html>
