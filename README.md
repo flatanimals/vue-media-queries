@@ -42,7 +42,7 @@ new Vue({
 
 ## Using common CSS Framework responsive bands
 
-Currently [Bulma](http://bulma.io) is the only supported framework, but PRs are welcome.
+Currently [Bulma](http://bulma.io) and [Materialize](http://materializecss.com/) are the only supported frameworks, but PRs are welcome.
 
 ```javascript
 import Vue from 'vue';
