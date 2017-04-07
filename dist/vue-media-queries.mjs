@@ -479,8 +479,44 @@ var Bulma = {
   }
 };
 
+// Materialize (http://materializecss.com/)
+var Materialize = {
+  // Named Media Queries
+  mediumAndUp: '(min-width: 601px)',
+  largeAndUp: '(min-width: 993px)',
+  extraLargeAndUp: '(min-width: 1201px)',
+  smallAndDown: '(max-width: 600px)',
+  mediumAndDown: '(max-width: 992px) ',
+  mediumOnly: '(min-width: 601px) and (max-width: 992px)',
+
+  // Media Query Helpers mixin. Use globally or per component
+  mixin: {
+    computed: {
+      isMediumAndUp: function isMediumAndUp() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.mediumAndUp);
+      },
+      isLargeAndUp: function isLargeAndUp() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.largeAndUp);
+      },
+      isExtraLargeAndUp: function isExtraLargeAndUp() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.extraLargeAndUp);
+      },
+      isSmallAndDown: function isSmallAndDown() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.smallAndDown);
+      },
+      isMediumAndDown: function isMediumAndDown() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.mediumAndDown);
+      },
+      isMediumOnly: function isMediumOnly() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.mediumOnly);
+      }
+    }
+  }
+};
+
 var bands = {
-  Bulma: Bulma
+  Bulma: Bulma,
+  Materialize: Materialize
 };
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();

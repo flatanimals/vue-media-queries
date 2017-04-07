@@ -1,6 +1,6 @@
 {
   "name": "vue-media-queries",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Vue 2 media query helpers",
   "author": "flatanimals",
   "repository": "flatanimals/vue-media-queries",
