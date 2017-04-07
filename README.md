@@ -1,13 +1,11 @@
-#vue-media-queries
-
-###Warning: Currently in development.
+# vue-media-queries
 
 Vue.js v 2.1+ plugin for using mediaMatch based queries.
 
 Thanks to [AStaroverov]( https://github.com/AStaroverov ) for creating [v-media-query](https://github.com/AStaroverov/v-media-query) which was the inspiration for this package.
 
 
-##Basic Usage
+## Basic Usage
 
 ##### Setup
 
@@ -28,7 +26,7 @@ new Vue({
 });
 ```
 
-#####Vue Component
+##### Vue Component
 
 ```vue
 <template>
@@ -42,14 +40,18 @@ new Vue({
 </template>
 ```
 
-##Using common CSS Framework responsive bands
+## Using common CSS Framework responsive bands
+
+Currently [Bulma](http://bulma.io) is the only supported framework, but PRs are welcome.
 
 ```javascript
 import Vue from 'vue';
-import {MediaQueries} from 'vue-media-queries';
+import {MediaQueries, CommonBands} from 'vue-media-queries';
 import App from './App';
 
-const mediaQueries = new MediaQueries();
+const mediaQueries = new MediaQueries({
+  bands: CommonBands.Bulma
+});
 
 Vue.use(mediaQueries);
 
@@ -57,6 +59,7 @@ new Vue({
   el: '#app',
   template: '<App/>',
   components: { App },
-  mediaQueries: mediaQueries
+  mediaQueries: mediaQueries,
+  mixins: [CommonBands.Bulma.mixin]
 });
 ```
