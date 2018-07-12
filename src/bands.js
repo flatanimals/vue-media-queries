@@ -12,25 +12,25 @@ const Bulma = {
   // Media Query Helpers mixin. Use globally or per component
   mixin: {
     computed: {
-      isMobile(){
+      isMobile() {
         return this.$resize && this.$mq.expr(this.$mq.bands.mobile);
       },
-      isTablet(){
+      isTablet() {
         return this.$resize && this.$mq.expr(this.$mq.bands.tablet);
       },
-      isTabletOnly(){
+      isTabletOnly() {
         return this.$resize && this.$mq.expr(this.$mq.bands.tabletOnly);
       },
-      isTouch(){
+      isTouch() {
         return this.$resize && this.$mq.expr(this.$mq.bands.touch);
       },
-      isDesktop(){
+      isDesktop() {
         return this.$resize && this.$mq.expr(this.$mq.bands.desktop);
       },
-      isDesktopOnly(){
+      isDesktopOnly() {
         return this.$resize && this.$mq.expr(this.$mq.bands.desktopOnly);
       },
-      isWideScreen(){
+      isWideScreen() {
         return this.$resize && this.$mq.expr(this.$mq.bands.wideScreen);
       },
     }
@@ -51,29 +51,99 @@ const Materialize = {
   // Media Query Helpers mixin. Use globally or per component
   mixin: {
     computed: {
-      isMediumAndUp(){
+      isMediumAndUp() {
         return this.$resize && this.$mq.expr(this.$mq.bands.mediumAndUp);
       },
-      isLargeAndUp(){
+      isLargeAndUp() {
         return this.$resize && this.$mq.expr(this.$mq.bands.largeAndUp);
       },
-      isExtraLargeAndUp(){
+      isExtraLargeAndUp() {
         return this.$resize && this.$mq.expr(this.$mq.bands.extraLargeAndUp);
       },
-      isSmallAndDown(){
+      isSmallAndDown() {
         return this.$resize && this.$mq.expr(this.$mq.bands.smallAndDown);
       },
-      isMediumAndDown(){
+      isMediumAndDown() {
         return this.$resize && this.$mq.expr(this.$mq.bands.mediumAndDown);
       },
-      isMediumOnly(){
+      isMediumOnly() {
         return this.$resize && this.$mq.expr(this.$mq.bands.mediumOnly);
       },
     }
   }
 };
 
+
+// Bootstrap4 (https://getbootstrap.com/)
+const Bootstrap4 = {
+  // Named Media Queries
+  xsDown: '(max-width: 575.98px)',
+  xsOnly: '(max-width: 575.98px)',
+  smUp: '(min-width: 576px)',
+  smDown: '(max-width: 767.98px)',
+  smOnly: '(min-width: 576px) and (max-width: 767.98px)',
+  mdUp: '(min-width: 768px)',
+  mdDown: '(max-width: 991.98px)',
+  mdOnly: '(min-width: 768px) and (max-width: 991.98px)',
+  lgUp: '(min-width: 992px)',
+  lgDown: '(max-width: 1199.98px)',
+  lgOnly: '(min-width: 992px) and (max-width: 1199.98px)',
+  xlUp: '(min-width: 1200px)',
+  xlOnly: '(min-width: 1200px)',
+
+  // Media Query Helpers mixin. Use globally or per component
+  mixin: {
+    computed: {
+      isXsDown() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.xsDown);
+      },
+      isXsOnly() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.xsOnly);
+      },
+
+      isSmUp() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.smUp);
+      },
+      isSmDown() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.smDown);
+      },
+      isSmOnly() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.smOnly);
+      },
+
+      isMdUp() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.mdUp);
+      },
+      isMdDown() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.mdDown);
+      },
+      isMdOnly() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.mdOnly);
+      },
+
+      isLgUp() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.lgUp);
+      },
+      isLgDown() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.lgDown);
+      },
+      isLgOnly() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.lgOnly);
+      },
+
+      isXlUp() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.xlUp);
+      },
+      isXlOnly() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.xlOnly);
+      },
+
+    }
+  }
+};
+
 export default {
   Bulma,
-  Materialize
+  Materialize,
+  Bootstrap4
 };
