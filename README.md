@@ -42,7 +42,9 @@ new Vue({
 
 ## Using common CSS Framework responsive bands
 
-Currently [Bulma](http://bulma.io) and [Materialize](http://materializecss.com/) are the only supported frameworks, but PRs are welcome.
+Currently [Bootstrap 4](http://getbootstrap.com), [Bulma](http://bulma.io) and [Materialize](http://materializecss.com/) are the only supported frameworks, but PRs are welcome.
+
+#####Bulma
 
 ```javascript
 import Vue from 'vue';
@@ -61,5 +63,47 @@ new Vue({
   components: { App },
   mediaQueries: mediaQueries,
   mixins: [CommonBands.Bulma.mixin]
+});
+```
+#####Bootstrap 4
+
+```javascript
+import Vue from 'vue';
+import {MediaQueries, CommonBands} from 'vue-media-queries';
+import App from './App';
+
+const mediaQueries = new MediaQueries({
+  bands: CommonBands.Bootstrap4
+});
+
+Vue.use(mediaQueries);
+
+new Vue({
+  el: '#app',
+  template: '<App/>',
+  components: { App },
+  mediaQueries: mediaQueries,
+  mixins: [CommonBands.Bootstrap4.mixin]
+});
+```
+#####Materialize
+
+```javascript
+import Vue from 'vue';
+import {MediaQueries, CommonBands} from 'vue-media-queries';
+import App from './App';
+
+const mediaQueries = new MediaQueries({
+  bands: CommonBands.Materialize
+});
+
+Vue.use(mediaQueries);
+
+new Vue({
+  el: '#app',
+  template: '<App/>',
+  components: { App },
+  mediaQueries: mediaQueries,
+  mixins: [CommonBands.Materialize.mixin]
 });
 ```
