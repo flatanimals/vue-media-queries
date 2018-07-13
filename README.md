@@ -44,7 +44,7 @@ new Vue({
 
 Currently [Bootstrap 4](http://getbootstrap.com), [Bulma](http://bulma.io) and [Materialize](http://materializecss.com/) are the only supported frameworks, but PRs are welcome.
 
-#####Bulma
+##### Bulma
 
 ```javascript
 import Vue from 'vue';
@@ -65,7 +65,7 @@ new Vue({
   mixins: [CommonBands.Bulma.mixin]
 });
 ```
-#####Bootstrap 4
+##### Bootstrap 4
 
 ```javascript
 import Vue from 'vue';
@@ -86,7 +86,7 @@ new Vue({
   mixins: [CommonBands.Bootstrap4.mixin]
 });
 ```
-#####Materialize
+##### Materialize
 
 ```javascript
 import Vue from 'vue';
