@@ -577,10 +577,66 @@ var Bootstrap4 = {
   }
 };
 
+// Tailwind (https://tailwindcss.com/)
+var Tailwind = {
+  // Named Media Queries
+  smUp: '(min-width: 576px)',
+  smDown: '(max-width: 767.98px)',
+  smOnly: '(min-width: 576px) and (max-width: 767.98px)',
+  mdUp: '(min-width: 768px)',
+  mdDown: '(max-width: 991.98px)',
+  mdOnly: '(min-width: 768px) and (max-width: 991.98px)',
+  lgUp: '(min-width: 992px)',
+  lgDown: '(max-width: 1199.98px)',
+  lgOnly: '(min-width: 992px) and (max-width: 1199.98px)',
+  xlUp: '(min-width: 1200px)',
+  xlOnly: '(min-width: 1200px)',
+
+  // Media Query Helpers mixin. Use globally or per component
+  mixin: {
+    computed: {
+      isSmUp: function isSmUp() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.smUp);
+      },
+      isSmDown: function isSmDown() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.smDown);
+      },
+      isSmOnly: function isSmOnly() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.smOnly);
+      },
+      isMdUp: function isMdUp() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.mdUp);
+      },
+      isMdDown: function isMdDown() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.mdDown);
+      },
+      isMdOnly: function isMdOnly() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.mdOnly);
+      },
+      isLgUp: function isLgUp() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.lgUp);
+      },
+      isLgDown: function isLgDown() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.lgDown);
+      },
+      isLgOnly: function isLgOnly() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.lgOnly);
+      },
+      isXlUp: function isXlUp() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.xlUp);
+      },
+      isXlOnly: function isXlOnly() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.xlOnly);
+      }
+    }
+  }
+};
+
 var bands = {
   Bulma: Bulma,
   Materialize: Materialize,
-  Bootstrap4: Bootstrap4
+  Bootstrap4: Bootstrap4,
+  Tailwind: Tailwind
 };
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
