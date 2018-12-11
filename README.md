@@ -42,7 +42,13 @@ new Vue({
 
 ## Using common CSS Framework responsive bands
 
-Currently [Bootstrap 4](http://getbootstrap.com), [Bulma](http://bulma.io) and [Materialize](http://materializecss.com/) are the only supported frameworks, but PRs are welcome.
+Currently, supported framework are:
+- [Bootstrap 4](https://getbootstrap.com).
+- [Bulma](https://bulma.io).
+- [Materialize](https://materializecss.com/).
+- [Tailwind](https://tailwindcss.com).
+
+PRs are welcome.
 
 ##### Bulma
 
@@ -105,5 +111,26 @@ new Vue({
   components: { App },
   mediaQueries: mediaQueries,
   mixins: [CommonBands.Materialize.mixin]
+});
+```
+##### Tailwind
+
+```javascript
+import Vue from 'vue';
+import {MediaQueries, CommonBands} from 'vue-media-queries';
+import App from './App';
+
+const mediaQueries = new MediaQueries({
+  bands: CommonBands.Tailwind
+});
+
+Vue.use(mediaQueries);
+
+new Vue({
+  el: '#app',
+  template: '<App/>',
+  components: { App },
+  mediaQueries: mediaQueries,
+  mixins: [CommonBands.Tailwind.mixin]
 });
 ```

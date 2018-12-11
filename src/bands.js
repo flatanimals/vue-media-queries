@@ -137,7 +137,64 @@ const Bootstrap4 = {
       isXlOnly() {
         return this.$resize && this.$mq.expr(this.$mq.bands.xlOnly);
       },
+    }
+  }
+};
 
+// Tailwind (https://tailwindcss.com/)
+const Tailwind = {
+  // Named Media Queries
+  smUp: '(min-width: 576px)',
+  smDown: '(max-width: 767.98px)',
+  smOnly: '(min-width: 576px) and (max-width: 767.98px)',
+  mdUp: '(min-width: 768px)',
+  mdDown: '(max-width: 991.98px)',
+  mdOnly: '(min-width: 768px) and (max-width: 991.98px)',
+  lgUp: '(min-width: 992px)',
+  lgDown: '(max-width: 1199.98px)',
+  lgOnly: '(min-width: 992px) and (max-width: 1199.98px)',
+  xlUp: '(min-width: 1200px)',
+  xlOnly: '(min-width: 1200px)',
+
+  // Media Query Helpers mixin. Use globally or per component
+  mixin: {
+    computed: {
+      isSmUp() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.smUp);
+      },
+      isSmDown() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.smDown);
+      },
+      isSmOnly() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.smOnly);
+      },
+
+      isMdUp() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.mdUp);
+      },
+      isMdDown() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.mdDown);
+      },
+      isMdOnly() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.mdOnly);
+      },
+
+      isLgUp() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.lgUp);
+      },
+      isLgDown() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.lgDown);
+      },
+      isLgOnly() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.lgOnly);
+      },
+
+      isXlUp() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.xlUp);
+      },
+      isXlOnly() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.xlOnly);
+      },
     }
   }
 };
@@ -145,5 +202,6 @@ const Bootstrap4 = {
 export default {
   Bulma,
   Materialize,
-  Bootstrap4
+  Bootstrap4,
+  Tailwind
 };
