@@ -47,6 +47,7 @@ Currently, supported framework are:
 - [Bulma](https://bulma.io).
 - [Materialize](https://materializecss.com/).
 - [Tailwind](https://tailwindcss.com).
+- [Spectre](https://picturepan2.github.io/spectre/).
 
 PRs are welcome.
 
@@ -132,5 +133,23 @@ new Vue({
   components: { App },
   mediaQueries: mediaQueries,
   mixins: [CommonBands.Tailwind.mixin]
+});
+```
+##### Spectre
+
+```javascript
+import Vue from 'vue';
+import {MediaQueries, CommonBands} from 'vue-media-queries';
+import App from './App';
+const mediaQueries = new MediaQueries({
+  bands: CommonBands.Spectre
+});
+Vue.use(mediaQueries);
+new Vue({
+  el: '#app',
+  template: '<App/>',
+  components: { App },
+  mediaQueries: mediaQueries,
+  mixins: [CommonBands.Spectre.mixin]
 });
 ```

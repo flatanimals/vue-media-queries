@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Spectre Example - Vue 2 Media Queries</title>
+</head>
+
+<body>
+  <p>
+    Resize window to observe functionality
+  </p>
+  <div id="app"></div>
+
+  <script type="text/x-template" id="what-is-my-size">
+    <div>
+        <div><strong>Current Screen Size(s):</strong></div>
+        <div v-show="isXsDown">is <code>xs</code> And Down</div>
+        <div v-show="isXsOnly">is <code>xs</code> And Only</div>
+
+        <div v-show="isSmUp">is <code>sm</code> And Up</div>
+        <div v-show="isSmDown">is <code>sm</code> And Down</div>
+        <div v-show="isSmOnly">is <code>sm</code> And Only</div>
+
+        <div v-show="isMdUp">is <code>md</code> And Up</div>
+        <div v-show="isMdDown">is <code>md</code> And Down</div>
+        <div v-show="isMdOnly">is <code>md</code> And Only</div>
+
+        <div v-show="isLgUp">is <code>lg</code> And Up</div>
+        <div v-show="isLgDown">is <code>lg</code> And Down</div>
+        <div v-show="isLgOnly">is <code>lg</code> And Only</div>
+
+        <div v-show="isXlUp">is <code>xl</code> And Up</div>
+        <div v-show="isXlOnly">is <code>xl</code> And Only</div>
+    </div>
+</script>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script src="../dist/vue-media-queries.js"></script>
+  <script>
+    var spectreBands = vueMediaQueries.CommonBands.Spectre;
+    var mediaQueries = new vueMediaQueries.MediaQueries({
+      bands: spectreBands
+    });
+    Vue.use(mediaQueries);
+    var vm = new Vue({
+      el: '#app',
+      template: '#what-is-my-size',
+      mediaQueries: mediaQueries,
+      mixins: [spectreBands.mixin]
+    });
+  </script>
+
+</body>
+
+</html>
