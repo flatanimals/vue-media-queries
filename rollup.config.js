@@ -1,19 +1,20 @@
 // Rollup plugins
 import babel from 'rollup-plugin-babel';
-import eslint from 'rollup-plugin-eslint';
+import { eslint } from 'rollup-plugin-eslint';
+// import { terser } from 'rollup-plugin-terser';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
-
-let pkg = require('./package.json');
+import pkg from './package.json';
 
 export default {
-  entry: 'src/index.js',
+  input: 'src/index.js',
   plugins: [
     resolve({
-      module: true,
-      jsnext: true,
-      main: true,
-      browser: true,
+      mainFields: ['module', 'main', 'jsnext:main','browser'],
+      // module: true,
+      // jsnext: true,
+      // main: true,
+      // browser: true,
       extensions: ['.js']
     }),
     commonjs(),
@@ -27,16 +28,17 @@ export default {
       exclude: 'node_modules/**',
     }),
   ],
-  targets: [
+  output: [
     {
-      dest: pkg.main,
+      name: 'vueMediaQueries',
+      file: pkg.main,
       format: 'umd',
       moduleName: 'vueMediaQueries',
       exports: 'named',
       sourceMap: true
     },
     {
-      dest: pkg.module,
+      file: pkg.module,
       format: 'es',
       sourceMap: true
     }

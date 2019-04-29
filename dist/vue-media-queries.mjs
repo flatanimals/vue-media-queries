@@ -1,4 +1,64 @@
-var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function _slicedToArray(arr, i) {
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
+}
+
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+function _iterableToArrayLimit(arr, i) {
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+  var _e = undefined;
+
+  try {
+    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance");
+}
+
+var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
 /**
  * lodash (Custom Build) <https://lodash.com/>
@@ -53,8 +113,8 @@ var objectProto = Object.prototype;
 var objectToString = objectProto.toString;
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
-var nativeMax = Math.max;
-var nativeMin = Math.min;
+var nativeMax = Math.max,
+    nativeMin = Math.min;
 
 /**
  * Gets the timestamp of the number of milliseconds that have elapsed since
@@ -450,7 +510,6 @@ var Bulma = {
   desktop: '(min-width: 1000px) ',
   desktopOnly: '(min-width: 1000px) and (max-width: 1191px)',
   wideScreen: '(min-width: 1192px)',
-
   // Media Query Helpers mixin. Use globally or per component
   mixin: {
     computed: {
@@ -477,9 +536,8 @@ var Bulma = {
       }
     }
   }
-};
+}; // Materialize (http://materializecss.com/)
 
-// Materialize (http://materializecss.com/)
 var Materialize = {
   // Named Media Queries
   mediumAndUp: '(min-width: 601px)',
@@ -488,7 +546,6 @@ var Materialize = {
   smallAndDown: '(max-width: 600px)',
   mediumAndDown: '(max-width: 992px) ',
   mediumOnly: '(min-width: 601px) and (max-width: 992px)',
-
   // Media Query Helpers mixin. Use globally or per component
   mixin: {
     computed: {
@@ -512,9 +569,8 @@ var Materialize = {
       }
     }
   }
-};
+}; // Bootstrap4 (https://getbootstrap.com/)
 
-// Bootstrap4 (https://getbootstrap.com/)
 var Bootstrap4 = {
   // Named Media Queries
   xsDown: '(max-width: 575.98px)',
@@ -530,7 +586,6 @@ var Bootstrap4 = {
   lgOnly: '(min-width: 992px) and (max-width: 1199.98px)',
   xlUp: '(min-width: 1200px)',
   xlOnly: '(min-width: 1200px)',
-
   // Media Query Helpers mixin. Use globally or per component
   mixin: {
     computed: {
@@ -575,9 +630,8 @@ var Bootstrap4 = {
       }
     }
   }
-};
+}; // Tailwind (https://tailwindcss.com/)
 
-// Tailwind (https://tailwindcss.com/)
 var Tailwind = {
   // Named Media Queries
   smUp: '(min-width: 576px)',
@@ -591,7 +645,6 @@ var Tailwind = {
   lgOnly: '(min-width: 992px) and (max-width: 1199.98px)',
   xlUp: '(min-width: 1200px)',
   xlOnly: '(min-width: 1200px)',
-
   // Media Query Helpers mixin. Use globally or per component
   mixin: {
     computed: {
@@ -631,7 +684,6 @@ var Tailwind = {
     }
   }
 };
-
 var bands = {
   Bulma: Bulma,
   Materialize: Materialize,
@@ -639,13 +691,9 @@ var bands = {
   Tailwind: Tailwind
 };
 
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var MediaQueries = function () {
+var MediaQueries =
+/*#__PURE__*/
+function () {
   function MediaQueries() {
     var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
       bands: {}
@@ -659,107 +707,106 @@ var MediaQueries = function () {
   }
 
   _createClass(MediaQueries, [{
-    key: 'attachListener',
+    key: "attachListener",
     value: function attachListener() {
       var _this = this;
 
       var throttleResize = lodash_throttle(function () {
         ++_this.resize;
       }, 200);
-
       window.addEventListener('resize', throttleResize);
     }
   }, {
-    key: 'getArgs',
+    key: "getArgs",
     value: function getArgs(args) {
       return args.length > 0 ? args.reverse() : args;
     }
   }, {
-    key: 'prepare',
+    key: "prepare",
     value: function prepare(val) {
-      return ('' + parseInt(val)).length === ('' + val).length ? val + 'px' : val;
+      return ('' + parseInt(val)).length === ('' + val).length ? "".concat(val, "px") : val;
     }
   }, {
-    key: 'expr',
+    key: "expr",
     value: function expr(expressionString) {
       return matchMedia(expressionString).matches;
     }
   }, {
-    key: 'below',
+    key: "below",
     value: function below() {
-      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
         args[_key] = arguments[_key];
       }
 
-      var _getArgs = this.getArgs(args),
-          _getArgs2 = _slicedToArray(_getArgs, 2),
-          value = _getArgs2[0],
-          _getArgs2$ = _getArgs2[1],
-          measurement = _getArgs2$ === undefined ? 'width' : _getArgs2$;
+      var _this$getArgs = this.getArgs(args),
+          _this$getArgs2 = _slicedToArray(_this$getArgs, 2),
+          value = _this$getArgs2[0],
+          _this$getArgs2$ = _this$getArgs2[1],
+          measurement = _this$getArgs2$ === void 0 ? 'width' : _this$getArgs2$;
 
-      return this.expr('(max-' + measurement + ': ' + this.prepare(value) + ')');
+      return this.expr("(max-".concat(measurement, ": ").concat(this.prepare(value), ")"));
     }
   }, {
-    key: 'above',
+    key: "above",
     value: function above() {
-      for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+      for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
         args[_key2] = arguments[_key2];
       }
 
-      var _getArgs3 = this.getArgs(args),
-          _getArgs4 = _slicedToArray(_getArgs3, 2),
-          value = _getArgs4[0],
-          _getArgs4$ = _getArgs4[1],
-          measurement = _getArgs4$ === undefined ? 'width' : _getArgs4$;
+      var _this$getArgs3 = this.getArgs(args),
+          _this$getArgs4 = _slicedToArray(_this$getArgs3, 2),
+          value = _this$getArgs4[0],
+          _this$getArgs4$ = _this$getArgs4[1],
+          measurement = _this$getArgs4$ === void 0 ? 'width' : _this$getArgs4$;
 
-      return this.expr('(min-' + measurement + ': ' + this.prepare(value) + ')');
+      return this.expr("(min-".concat(measurement, ": ").concat(this.prepare(value), ")"));
     }
   }, {
-    key: 'between',
+    key: "between",
     value: function between() {
-      for (var _len3 = arguments.length, args = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+      for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
         args[_key3] = arguments[_key3];
       }
 
-      var _getArgs5 = this.getArgs(args),
-          _getArgs6 = _slicedToArray(_getArgs5, 2),
-          value = _getArgs6[0],
-          _getArgs6$ = _getArgs6[1],
-          measurement = _getArgs6$ === undefined ? 'width' : _getArgs6$;
+      var _this$getArgs5 = this.getArgs(args),
+          _this$getArgs6 = _slicedToArray(_this$getArgs5, 2),
+          value = _this$getArgs6[0],
+          _this$getArgs6$ = _this$getArgs6[1],
+          measurement = _this$getArgs6$ === void 0 ? 'width' : _this$getArgs6$;
 
       var _value = _slicedToArray(value, 2),
           minVal = _value[0],
           maxVal = _value[1];
 
-      return this.expr('\n    (min-' + measurement + ': ' + this.prepare(minVal) + ') and\n    (max-' + measurement + ': ' + this.prepare(maxVal) + ')\n  ');
+      return this.expr("\n    (min-".concat(measurement, ": ").concat(this.prepare(minVal), ") and\n    (max-").concat(measurement, ": ").concat(this.prepare(maxVal), ")\n  "));
     }
   }, {
-    key: 'beyond',
+    key: "beyond",
     value: function beyond() {
-      for (var _len4 = arguments.length, args = Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
+      for (var _len4 = arguments.length, args = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
         args[_key4] = arguments[_key4];
       }
 
-      var _getArgs7 = this.getArgs(args),
-          _getArgs8 = _slicedToArray(_getArgs7, 2),
-          value = _getArgs8[0],
-          _getArgs8$ = _getArgs8[1],
-          measurement = _getArgs8$ === undefined ? 'width' : _getArgs8$;
+      var _this$getArgs7 = this.getArgs(args),
+          _this$getArgs8 = _slicedToArray(_this$getArgs7, 2),
+          value = _this$getArgs8[0],
+          _this$getArgs8$ = _this$getArgs8[1],
+          measurement = _this$getArgs8$ === void 0 ? 'width' : _this$getArgs8$;
 
       var _value2 = _slicedToArray(value, 2),
           minVal = _value2[0],
           maxVal = _value2[1];
 
-      return this.expr('\n    (min-' + measurement + ': ' + this.prepare(maxVal) + '),\n    (max-' + measurement + ': ' + this.prepare(minVal) + ')\n  ');
+      return this.expr("\n    (min-".concat(measurement, ": ").concat(this.prepare(maxVal), "),\n    (max-").concat(measurement, ": ").concat(this.prepare(minVal), ")\n  "));
     }
   }, {
-    key: 'install',
+    key: "install",
     value: function install(Vue) {
       if (this.installed) {
         return;
       }
-      this.installed = true;
 
+      this.installed = true;
       Vue.mixin({
         created: function created() {
           if (this.$options.mediaQueries) {
@@ -768,13 +815,11 @@ var MediaQueries = function () {
           }
         }
       });
-
       Object.defineProperty(Vue.prototype, '$mq', {
         get: function get() {
           return this.$root._mq;
         }
       });
-
       Object.defineProperty(Vue.prototype, '$resize', {
         get: function get() {
           return this.$root._mq.resize;
@@ -786,5 +831,5 @@ var MediaQueries = function () {
   return MediaQueries;
 }();
 
-export { MediaQueries, bands as CommonBands };export default MediaQueries;
-//# sourceMappingURL=vue-media-queries.mjs.map
+export default MediaQueries;
+export { bands as CommonBands, MediaQueries };
