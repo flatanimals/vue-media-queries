@@ -1,13 +1,16 @@
 // Bulma (http://bulma.io)
+// Breakpoint document: https://bulma.io/documentation/overview/responsiveness/
 const Bulma = {
   // Named Media Queries
   mobile: '(max-width: 768px)',
   tablet: '(min-width: 769px)',
-  tabletOnly: '(min-width: 769px) and (max-width: 999px)',
-  touch: '(max-width: 999px)',
-  desktop: '(min-width: 1000px) ',
-  desktopOnly: '(min-width: 1000px) and (max-width: 1191px)',
-  wideScreen: '(min-width: 1192px)',
+  tabletOnly: '(min-width: 769px) and (max-width: 1023px)',
+  touch: '(max-width: 1023px)',
+  desktop: '(min-width: 1024px) ',
+  desktopOnly: '(min-width: 1024px) and (max-width: 1215px)',
+  wideScreen: '(min-width: 1216px)',
+  wideScreenOnly: '(min-width: 1216px) and (max-width: 1407px)',
+  fullHD: '(min-width: 1408px)',
 
   // Media Query Helpers mixin. Use globally or per component
   mixin: {
@@ -32,6 +35,12 @@ const Bulma = {
       },
       isWideScreen() {
         return this.$resize && this.$mq.expr(this.$mq.bands.wideScreen);
+      },
+      isWideScreenOnly() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.wideScreenOnly);
+      },
+      isFullHD() {
+        return this.$resize && this.$mq.expr(this.$mq.bands.fullHD);
       },
     }
   }
