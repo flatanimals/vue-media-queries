@@ -4,6 +4,8 @@ Vue.js v 2.1+ plugin for using mediaMatch based queries.
 
 Thanks to [AStaroverov]( https://github.com/AStaroverov ) for creating [v-media-query](https://github.com/AStaroverov/v-media-query) which was the inspiration for this package.
 
+*Note: As of v0.0.5, Output is now minified*
+
 
 ## Basic Usage
 
