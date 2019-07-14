@@ -153,17 +153,17 @@ const Bootstrap4 = {
 // Tailwind (https://tailwindcss.com/)
 const Tailwind = {
   // Named Media Queries
-  smUp: '(min-width: 576px)',
+  smUp: '(min-width: 640px)',
   smDown: '(max-width: 767.98px)',
-  smOnly: '(min-width: 576px) and (max-width: 767.98px)',
+  smOnly: '(min-width: 640px) and (max-width: 767.98px)',
   mdUp: '(min-width: 768px)',
-  mdDown: '(max-width: 991.98px)',
-  mdOnly: '(min-width: 768px) and (max-width: 991.98px)',
-  lgUp: '(min-width: 992px)',
-  lgDown: '(max-width: 1199.98px)',
-  lgOnly: '(min-width: 992px) and (max-width: 1199.98px)',
-  xlUp: '(min-width: 1200px)',
-  xlOnly: '(min-width: 1200px)',
+  mdDown: '(max-width: 1023.98px)',
+  mdOnly: '(min-width: 768px) and (max-width: 1023.98px)',
+  lgUp: '(min-width: 1024px)',
+  lgDown: '(max-width: 1279.98px)',
+  lgOnly: '(min-width: 1024px) and (max-width: 1279.98px)',
+  xlUp: '(min-width: 1280px)',
+  xlOnly: '(min-width: 1280px)',
 
   // Media Query Helpers mixin. Use globally or per component
   mixin: {
