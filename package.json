@@ -8,6 +8,7 @@
   "main": "dist/vue-media-queries.js",
   "module": "dist/vue-media-queries.mjs",
   "jsnext:main": "dist/vue-media-queries.mjs",
+  "types" : "src/index.d.ts",
   "keywords": [
     "vue",
     "mediaqueries",
